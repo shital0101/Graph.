@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+    int i,n,j,a[10][10];
+    printf("\nenter the limit:");
+    scanf("%d",&n);
+    printf("\nenter the matrix:");
+    for(i=1;i<=n;i++)
+     {
+        for(j=1;j<=n;j++)
+         {
+           scanf("%d",&a[i][j]);
+         }
+     }
+
+     for(i=1;i<=n;i++)
+     {
+        printf("\tv%d",i);
+     }
+
+     for(i=1;i<=n;i++)
+     {
+       printf("\nv%d",i);
+       for(j=1;j<=n;j++)
+        {
+          printf("\t%d",a[i][j]);
+        }
+     }
+}
