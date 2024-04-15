@@ -1,0 +1,42 @@
+//floyd warshalls algorithm.
+#include<stdio.h>
+int floyd(int a[10][10],int n)
+{
+    int i,j,k;
+    for(k=1;k<=n;k++)
+    {
+       for(i=1;i<=n;i++)
+       {
+           for(j=1;j<=n;j++)
+           {
+              if(a[i][k]+a[k][j]<a[i][j])
+              {
+                 a[i][j]=a[i][k]+a[k][j];
+              }
+           }
+       }
+    }
+    for(i=1;i<=n;i++)
+    {
+       for(j=1;j<=n;j++)
+       {
+       if(i!=j)
+         printf("\ndistence of(%d %d)=%d",i,j,a[i][j]);
+       }
+    }
+}
+int main()
+{
+   int a[10][10],i,j,n;
+   printf("\nenter limit:");
+   scanf("%d",&n);
+   printf("\nenter matrix:");
+   for(i=1;i<=n;i++)
+   {
+      for(j=1;j<=n;j++)
+      {
+         scanf("%d",&a[i][j]);
+      }
+   }
+   floyd(a,n);
+}
