@@ -1,0 +1,32 @@
+//dfs program.
+#include<stdio.h>
+void dfs(int a[10][10],int n,int i)
+{
+   int j;
+   static int visited[10]={0};
+   visited[i]=1;
+   printf("%d\t",i);
+   for(j=1;j<=n;j++)
+   {
+     if(a[i][j]==1&&visited[j]==0)
+     {
+         dfs(a,n,j);
+     }
+  }
+}
+
+void main()
+{
+   int i,j,n,a[10][10];
+   printf("\nenter the no. vertices:");
+   scanf("%d",&n);
+   printf("\nenter the matrix:");
+   for(i=1;i<=n;i++)
+   {
+     for(j=1;j<=n;j++)
+     {
+       scanf("%d",&a[i][j]);
+     }
+   }
+   dfs(a,n,1);
+}
